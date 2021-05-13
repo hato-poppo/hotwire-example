@@ -12,6 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2021_05_11_222650) do
 
+  create_table "messages", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "room_id"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_messages_on_room_id"
+  end
+
   create_table "rooms", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false

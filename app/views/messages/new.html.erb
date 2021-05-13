@@ -1,0 +1,10 @@
+<h1>New Message</h1>
+
+<%= form_with url: new_room_message_path do |form| %>
+    <div class='field'>
+        <%= form.text_field :content %>
+        <%= form.submit 'Send' %>
+    </div>
+<% end %>
+
+<%= link_to 'Back', room_path(@message[:room_id]) %>
